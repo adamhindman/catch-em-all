@@ -4,13 +4,17 @@ ul
     grid-gap .5rem
     margin 0
     padding 2rem
-    li
+    li.cell
         list-style none
         background-color #fafafa
         padding 1rem
         text-align center
         h4
             margin 0 0 1rem 0
+        &:hover
+            background-color #f3f3f3
+            transform scale(1.1)
+            transition transform .08s ease
     ul
         padding 0
         margin 0 0 1rem 0
@@ -19,4 +23,5 @@ ul
         justify-content center
         flex-direction column
         li
+            list-style none
             padding 0;

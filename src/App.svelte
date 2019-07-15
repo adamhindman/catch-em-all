@@ -1,5 +1,5 @@
 <script>
-  const max = 800;
+  const max = 99;
   const url = `https://pokeapi.co/api/v2/pokemon/?limit=${max}`;
   const getPokemons = async () => {
     let response = await fetch(url);
@@ -10,7 +10,6 @@
         data.results.map(async pokemon => {
           let response = await fetch(pokemon.url);
           let data = await response.json();
-          console.log(data);
           return {
             name: pokemon.name,
             types: data.types,
@@ -33,7 +32,7 @@
     <p>...waiting</p>
   {:then pokemons}
     {#each pokemons as pokemon}
-      <li>
+      <li class="cell">
         <img src={pokemon.spriteUrl} alt={pokemon.name} />
         <h4>{pokemon.name}</h4>
         <ul>
